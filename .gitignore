@@ -386,6 +386,7 @@ yarn-error.log
 *.sublime-workspace
 
 # Visual Studio Code
+/FrontEnd/products-app/.vscode
 */.vscode/*
 !.vscode/settings.json
 !.vscode/tasks.json
@@ -405,4 +406,3 @@ testem.log
 # System files
 .DS_Store
 Thumbs.db
-/FrontEnd/products-app/.vscode
