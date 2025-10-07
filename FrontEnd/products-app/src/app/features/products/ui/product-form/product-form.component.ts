@@ -10,7 +10,8 @@ import { CommonModule } from '@angular/common';
   selector: 'app-product-form',
   standalone: true,
   imports: [CommonModule, ReactiveFormsModule, RouterModule],
-  templateUrl: './product-form.component.html'
+  templateUrl: './product-form.component.html',
+  styleUrl:'./product-form.component.scss'
 })
 export class ProductFormComponent implements OnInit {
   private fb = inject(FormBuilder);

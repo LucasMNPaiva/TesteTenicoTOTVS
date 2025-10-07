@@ -9,7 +9,8 @@ import { CommonModule } from '@angular/common';
   selector: 'app-product-list',
   standalone: true,
    imports: [CommonModule, RouterModule],
-  templateUrl: './product-list.component.html'
+  templateUrl: './product-list.component.html',
+  styleUrl: './product-list.component.scss'
 })
 export class ProductListComponent {
   private svc = inject(ProductService);

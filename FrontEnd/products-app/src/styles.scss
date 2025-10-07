@@ -1,21 +1,15 @@
-
-$primary-color: #00A3BE;       
-$primary-color-light: #9DFFFF; 
-$secondary-color: #00C7A5; 
+$primary-color: #00A3BE;
+$primary-color-light: #9DFFFF;
+$secondary-color: #00C7A5;
 $success-color: #00C7A5;
 $error-color: #D84315;
 $link-color: #00A3BE;
 
-$body-bg: #F5F7FA;         
-$text-color: #0B2239;      
-$divider-color: #E6EBF2; 
+$body-bg: #F5F7FA;
+$text-color: #0B2239;
+$divider-color: #E6EBF2;
 
-/* — Import do Materialize (usa as vars acima) — */
 @use "materialize-css/sass/materialize";
-
-/* ================================
-   RESET & BASE
-   ================================ */
 
 html, body { height: 100%; }
 body {
@@ -23,34 +17,22 @@ body {
   min-height: 100%;
   background:
     linear-gradient(to bottom, #f5f5f5 0 50vh, #ffffff 50vh 100vh) fixed,
-    #ffffff; /* camada de fallback pro resto da página */
+    #ffffff;
   background-repeat: no-repeat;
   background-size: 100% 100vh, auto;
+  color: $text-color;
 }
-
 
 .container { max-width: 1120px; }
 
-/* ================================
-   LAYOUT (sticky footer)
-   ================================ */
-
-/* Como estamos em Angular standalone, o root é <app-root> */
 app-root {
   display: flex;
   min-height: 100vh;
   flex-direction: column;
 }
 
-main {
-  flex: 1 0 auto;  /* empurra o footer pra base quando conteúdo é curto */
-}
-
+main { flex: 1 0 auto; }
 footer.page-footer { margin-top: auto; }
-
-/* ================================
-   HEADER & FOOTER (cor solicitada)
-   ================================ */
 
 $brand-ink: rgba(0, 34, 51, .95);
 
@@ -66,91 +48,55 @@ nav a,
   color: #fff !important;
 }
 
-/* opcional: leve efeito vidro no header */
 nav { backdrop-filter: saturate(120%) blur(6px); }
 
-/* ================================
-   COMPONENTIZAÇÃO DE PÁGINA
-   ================================ */
+nav .brand-logo,
+nav .brand-logo:hover {
+  text-decoration: none !important;
+  cursor: default;
+  pointer-events: none;
+}
 
-/* Card de página para agrupar título + conteúdo (lista, form etc.) */
 .page-card {
   background: #fff;
   border-radius: 12px;
   box-shadow: 0 6px 18px rgba(11, 34, 57, 0.08);
   border: 1px solid $divider-color;
   overflow: hidden;
-
-  .page-card__header {
-    background: linear-gradient(180deg, rgba(0,163,190,0.12), rgba(0,163,190,0.06));
-    border-bottom: 1px solid $divider-color;
-    padding: 16px 20px;
-    display: flex; align-items: center; gap: 8px;
-
-    .material-icons { color: $primary-color; }
-    h5 { margin: 0; font-weight: 600; color: $text-color; }
-  }
-
-  .page-card__content { padding: 20px; }
 }
-
-/* ================================
-   TABELAS
-   ================================ */
-
-/* Cabeçalho da tabela com a cor solicitada */
-$table-header: rgba(0, 34, 51, .95);
-
-.table-elevated {
-  border: 1px solid $divider-color;
-  border-radius: 10px;
-  overflow: hidden;
-
-  thead {
-    background: $table-header !important;   /* força sobre o materialize */
-    th {
-      color: #fff !important;               /* contraste */
-      font-weight: 600;
-      padding: 8px ;
-      border-radius: 0;
-    }
-  }
-
-  tbody tr {
-    transition: background .15s ease;
-    &:hover { background: rgba(0,163,190,.06); }
-  }
-
+.page-card .page-card__header {
+  background: linear-gradient(180deg, rgba(0,163,190,0.12), rgba(0,163,190,0.06));
+  border-bottom: 1px solid $divider-color;
+  padding: 16px 20px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
-  td, th { border-bottom: 1px solid $divider-color !important; }
+.page-card .page-card__header .material-icons { color: $primary-color; }
+.page-card .page-card__header h5 { margin: 0; font-weight: 600; color: $text-color; }
+.page-card .page-card__content { padding: 20px; }
 
-.input-field label.active {
-  color: $text-color;
-}
+.input-field label.active { color: $text-color; }
 
-/* Bordas sutis nos inputs */
 .input-field input[type=text],
 .input-field input[type=number] {
   border-bottom: 1px solid $divider-color;
-  &:focus { border-bottom: 1px solid $primary-color; box-shadow: 0 1px 0 0 $primary-color; }
+}
+.input-field input[type=text]:focus,
+.input-field input[type=number]:focus {
+  border-bottom: 1px solid $primary-color;
+  box-shadow: 0 1px 0 0 $primary-color;
 }
 
-.btn, .btn-large, .btn-small {
-  border-radius: 8px;
-}
-
+.btn, .btn-large, .btn-small { border-radius: 8px; }
 .btn-flat {
   color: $primary-color;
   border-radius: 8px;
-  &:hover { background: rgba(0,163,190,.08); }
 }
+.btn-flat:hover { background: rgba(0,163,190,.08); }
 
 .chip--info   { background: rgba(0,163,190,.12); color: $primary-color; }
 .chip--accent { background: rgba(0,199,165,.12); color: #007e6b; }
-
-/* ================================
-   UTILITÁRIOS RÁPIDOS
-   ================================ */
 
 .mt-16 { margin-top: 16px !important; }
 .mt-24 { margin-top: 24px !important; }
@@ -161,22 +107,9 @@ $table-header: rgba(0, 34, 51, .95);
 .p-16  { padding: 16px !important; }
 .p-20  { padding: 20px !important; }
 
-/* ================================
-   LINKS E TEXTO
-   ================================ */
-
 a { color: $link-color; }
 a:hover { text-decoration: underline; }
 
-/* Para títulos soltos fora dos cards */
 h1, h2, h3, h4, h5 { color: $text-color; }
 
-.white-button{
-  color: white !important;
-}
-.btn-small{
-  margin-left: 5px;
-}
-table{
-  border: 10px solid black;
-}
+.white-button { color: white !important; }

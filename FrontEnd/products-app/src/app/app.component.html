@@ -3,8 +3,8 @@
     <div class="container">
       <a class="brand-logo">CRUD TOTVS</a>
       <ul class="right hide-on-med-and-down">
-        <li><a routerLink="/products" class="waves-effect">Listar</a></li>
-        <li><a routerLink="/products/new" class="waves-effect">Novo</a></li>
+       <li><a [routerLink]="['/products']" routerLinkActive="active">Lista</a></li>
+        <li><a [routerLink]="['/products','new']" routerLinkActive="active">Novo</a></li>
       </ul>
     </div>
   </div>

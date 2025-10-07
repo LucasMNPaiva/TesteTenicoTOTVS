@@ -1,0 +1,25 @@
+.table-elevated {
+  border: 1px solid #E6EBF2;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.table-elevated thead {
+  background: rgba(0, 34, 51, .95) !important;
+}
+.table-elevated thead th {
+  color: #fff !important;
+  font-weight: 600;
+  padding: 8px;
+  border-radius: 0;
+}
+.table-elevated tbody tr {
+  transition: background .15s ease;
+}
+.table-elevated tbody tr:hover {
+  background: rgba(0,163,190,.06);
+}
+.table-elevated td,
+.table-elevated th {
+  border-bottom: 1px solid #E6EBF2 !important;
+}
+.btn-small { margin-left: 5px; }
