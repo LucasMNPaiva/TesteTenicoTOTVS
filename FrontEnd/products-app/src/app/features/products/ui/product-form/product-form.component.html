@@ -1,0 +1,33 @@
+<div class="page-card">
+  <div class="page-card__header">
+    <i class="material-icons">edit_note</i>
+    <h5>{{ isEdit ? 'Editar Produto' : 'Novo Produto' }}</h5>
+  </div>
+
+  <div class="page-card__content">
+    <form [formGroup]="form" (ngSubmit)="save()" class="row">
+      <div class="input-field col s12 m6">
+        <input id="product-name" type="text" formControlName="name" [class.invalid]="invalid('name')">
+        <label for="product-name" class="active">Nome</label>
+        <span class="helper-text" data-error="Nome é obrigatório (máx 120)"></span>
+      </div>
+
+      <div class="input-field col s12 m3">
+        <input id="price" type="number" step="0.01" formControlName="price" [class.invalid]="invalid('price')">
+        <label for="price" class="active">Preço</label>
+      </div>
+
+      <div class="input-field col s12 m3">
+        <input id="stock" type="number" formControlName="stock" [class.invalid]="invalid('stock')">
+        <label for="stock" class="active">Estoque</label>
+      </div>
+
+      <div class="col s12" style="margin-top:8px;">
+        <button class="btn waves-effect">
+          <i class="material-icons left white-button">save</i>Salvar
+        </button>
+        <a routerLink="/products" class="btn-flat">Cancelar</a>
+      </div>
+    </form>
+  </div>
+</div>

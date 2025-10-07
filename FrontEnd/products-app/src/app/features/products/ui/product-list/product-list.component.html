@@ -1,0 +1,41 @@
+<div class="page-card">
+  <div class="page-card__header">
+    <i class="material-icons">inventory_2</i>
+    <h5>Produtos</h5>
+    <div class="right" style="margin-left:auto;">
+      <a routerLink="/products/new" class="btn waves-effect">
+        <i class="material-icons left white-button">add</i>Novo
+      </a>
+    </div>
+  </div>
+
+  <div class="page-card__content">
+    <table class="highlight responsive-table table-elevated">
+      <thead>
+        <tr>
+          <th>Nome</th>
+          <th>Preço</th>
+          <th>Estoque</th>
+          <th style="width:160px;">Ações</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let p of products$ | async">
+          <td>{{ p.name }}</td>
+          <td>{{ p.price | currency:'BRL' }}</td>
+          <td>
+            <span class="chip chip--info">{{ p.stock }}</span>
+          </td>
+          <td>
+            <a [routerLink]="['/products', p.id]" class="btn-small waves-effect">
+              <i class="material-icons">edit</i>
+            </a>
+            <button class="btn-small red waves-effect" (click)="remove(p.id)">
+              <i class="material-icons">delete</i>
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

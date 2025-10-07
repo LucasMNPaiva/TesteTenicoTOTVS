@@ -1,0 +1,21 @@
+<nav>
+  <div class="nav-wrapper">
+    <div class="container">
+      <a class="brand-logo">CRUD TOTVS</a>
+      <ul class="right hide-on-med-and-down">
+        <li><a routerLink="/products" class="waves-effect">Listar</a></li>
+        <li><a routerLink="/products/new" class="waves-effect">Novo</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<main class="container" style="margin: 32px auto;">
+  <router-outlet></router-outlet>
+</main>
+
+<footer class="page-footer">
+  <div class="container">
+    <div class="white-text">Angular + Materialize · Tema inspirado TOTVS</div>
+  </div>
+</footer>

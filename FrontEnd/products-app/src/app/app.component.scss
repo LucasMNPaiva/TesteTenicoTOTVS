@@ -1,0 +1,13 @@
+:host {
+  display: flex;
+  min-height: 100vh;   // ocupa a altura toda
+  flex-direction: column;
+}
+
+main {
+  flex: 1 0 auto;      // empurra o footer para baixo
+}
+
+footer.page-footer {
+  margin-top: auto;    // garante colar no fim
+}
